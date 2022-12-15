@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.ToggleButtonGroup?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="hu.petrik.etlap.etlap.EtlapController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <HBox maxHeight="-Infinity" prefHeight="30.0" prefWidth="400.0">
+         <children>
+            <Button fx:id="buttonEtlapUjEtel" mnemonicParsing="false" text="Új étel felvétele" wrapText="true">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="buttonEtlapTorles" mnemonicParsing="false" prefWidth="110.0" text="Törlés" wrapText="true" />
+         </children>
+      </HBox>
+      <TitledPane animated="false" text="Áremelés">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="100.0" prefWidth="400.0">
+                     <children>
+                        <HBox maxWidth="400.0" prefHeight="50.0" prefWidth="400.0">
+                           <children>
+                              <Spinner fx:id="spinnerSzazalekEmeles" />
+                              <TextField editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="24.0" text="\%" />
+                              <Button fx:id="buttonSzazalekEmeles" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0" text="Emelés">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox maxWidth="400.0" prefHeight="50.0" prefWidth="400.0">
+                           <children>
+                              <Spinner fx:id="spinnerForintEmeles" />
+                              <TextField editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="24.0" text="Ft" />
+                              <Button fx:id="buttonForintEmeles" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefWidth="110.0" text="Emelés">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <ToggleButtonGroup selectionType="SINGLE" VBox.vgrow="NEVER">
+          <toggles>
+            <ToggleButton fx:id="toggleButtonName" mnemonicParsing="false" prefWidth="200.0" text="Név" />
+            <ToggleButton fx:id="toggleButtonKategoria" mnemonicParsing="false" prefWidth="100.0" text="Kategória" />
+            <ToggleButton fx:id="toggleButtonAr" mnemonicParsing="false" prefWidth="100.0" text="Ár (Ft)" />
+          </toggles>
+      </ToggleButtonGroup>
+      <ListView fx:id="listViewEtelek" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="NEVER" />
+   </children>
+</VBox>
